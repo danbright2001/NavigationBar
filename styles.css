@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 1.2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-bottom: 2000px;
+}
+a {
+    text-decoration: none;
+    color: #555;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 5%;
+    align-items: center;
+    background-color: #330737;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.logo {
+    background-color: #437a26;
+    color: #f1f1f1;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px;
+    cursor: default;
+    border-radius: 3px;
+    align-items: center;
+}
+nav {
+    display: flex;
+}
+nav .nav-links {
+    align-items: center;
+    gap: 5px;
+    list-style-type: none;
+    display: flex;
+}
+nav .nav-links li {
+    display: inline-block;
+}
+.nav-links a {
+    padding: 10px 20px;
+    display: inline-block;
+    color: #f1f1f1;
+    &:hover {
+        background-color: #555;
+        border-radius: 10px;
+    }
+}
+
+.close-icon {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+
+}
+
+.menu-icon {
+    color: #f1f1f1;
+}
+.icon {
+    align-items: center;
+    font-size: 25px;
+    display: none;
+}
+.hero {
+    margin-top: 20px;
+    background-color: #61dafb;
+    padding: 0px 5%;
+    
+}
+
+@media (max-width: 768px) {
+    .icon {
+        display: block;
+    }
+    nav .nav-links {
+        position: fixed;
+        display: flex;
+        flex-direction: column; 
+        background-color: #330737;
+        text-align: center;
+        color: #f1f1f1;
+        left: -100%;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        max-width: 400px;
+        padding: 40px;
+        &.active {
+            left: 0;
+        }
+    }
+    nav .nav-links li {
+        flex-direction: column;/* Added */
+        width: 100%;
+    }
+    nav .nav-links li a {
+        display: block; /* Changed from flex-direction: column; */
+        margin-top: 30px; /* Adjusted margin */
+        font-weight: bold;
+        color: #f1f1f1;
+        width: 100%;
+        &:hover {
+            background-color: #555;
+            border-radius: 10px;
+        }
+    }
+}
+
